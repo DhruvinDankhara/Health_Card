@@ -1,0 +1,150 @@
+<body>
+  <script src="/js/cities.js"></script>
+<div class="container1">
+<div class="header">
+            <div class="row-header row">
+                <div class="image-1 col-lg-2 text-center my-auto">
+                    <img src="/images/medical.png" style="width: 40%;">
+                </div>
+                <div class="Registration col-lg-10 my-auto">
+                    <span style="font-size: 300%;color : black;">
+                        Medical Registration Form
+                    </span>
+                </div>
+            </div>
+        </div>
+    <div style="padding:2%">
+        <form class="form-container my-auto" method="POST" action="/medicals/registerMedical">
+            <div class="row form-group">
+                <div class="col-lg-2">
+                  <label for="medicalname">Medical Name</label>
+                </div>
+                <div class="col-lg-4">
+                  <input type="text" name="medicalname" class="form-control">
+                </div>
+              </div>
+
+            <div class="row form-group">
+              <div class="col-lg-2">
+                <label for="oname">Owner Name</label>
+              </div>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" name="fname" placeholder="First name">
+              </div>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" name="mname" placeholder="Middle Name">
+              </div>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" name="lname" placeholder="Last name">
+              </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-lg-2">
+                  <label for="license">License Number</label>
+                </div>
+                <div class="col-lg-3">
+                  <input type="text" name="licenseNumber" class="form-control">
+                </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-lg-2">
+                <label for="address">Medical Address</label>
+              </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" name="addressLine1" placeholder="Street Address Line 1">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-lg-2">
+                <label for="address"></label>
+              </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" name="addressLine2" placeholder="Street Address Line 2">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-lg-2">
+                <label for="address"></label>
+              </div>
+              <div class="col-lg-2">
+                <select class="form-control" name="state" id="state" onchange="print_city('city', this.selectedIndex);"></select>
+              </div>
+              <div class="col-lg-2">
+                <select class="form-control" name="city" id="city"><option selected disabled hidden>Select City</option></select>
+              </div>
+              <div class="col-lg-2">
+                <input type="number" class="form-control"  name="pincode" placeholder="Postal / Zip Code">
+              </div>
+            </div>
+            <script language="javascript">print_state("state");</script>
+
+            <div class="row form-group">
+                <div class="col-lg-2">
+                  <label for="email">E-mail</label>
+                </div>
+                <div class="col-lg-3">
+                  <input type="email" class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" placeholder="ex: myname@example.com">
+                </div>
+              </div>
+
+            <div class="row form-group">
+              <div class="col-lg-2">
+                <label for="mobile">Mobile Number</label>
+              </div>
+              <div class="col-lg-3">
+                <input type="text" name="mobile" class="form-control">
+              </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-lg-2">
+                  <label for="tnum">Medical Mobile Number</label>
+                </div>
+                <div class="col-lg-3">
+                  <input type="text" name="mmobile" class="form-control">
+                </div>
+              </div>          
+            <div class="row form-group">
+                <div class="col-lg-2">
+                  <label for="pwd">Enter Password</label>
+                </div>
+                {{!--  --}}
+                   {{!-- title="Must contain at least one number and one uppercase and lowercase letter, and? at least 8 or more characters" --}}
+                <div class="col-lg-3">
+                  <input type="password" name="password"  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"id="p" class="form-control">
+                </div>
+              </div>
+  
+              <div class="row form-group">
+                <div class="col-lg-2">
+                  <label for="cpwd">Confirm Password</label>
+                </div>
+                <div class="col-lg-3">
+                  <input type="password" id="cp" class="form-control">
+                </div>
+              </div>
+
+              <div class="text-center">
+              <button class="btn btn-light" style="width: 15%;" type="reset">Reset</button>
+              <button class="btn btn-primary" style=" width:15%;" type="submit" onclick="Validate()">Submit</button>
+               </div>
+
+
+              {{!-- password matching --}}
+              <script type="text/javascript">
+                function Validate() {
+                    var password = document.getElementById("p").value;
+                    var confirmPassword = document.getElementById("cp").value;
+                    if (password != confirmPassword) {
+                        alert("Passwords do not match.");
+                        return false;
+                    }
+                    return true;
+                }
+              </script>
+              
+        </form>
+      </div>
+</div>
+</body>

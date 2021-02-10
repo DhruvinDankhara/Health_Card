@@ -1,0 +1,50 @@
+<body style="margin : 0%; ">
+    <div class="container1">
+        <div class="header">
+            <div class="row-header">
+            <div class="row">
+                <div class="image-1 col-lg-2 my-auto text-center">
+                    <img src="images/user.png" style="width: 40%;">
+                </div>
+                <div class="Registration col-lg-10 my-auto" style="color : black;font-size: 300%";>
+                    Registration Form For User
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="form-container my-auto">
+            <div class="row">
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-8 row">
+                <div class="sc col-lg-4 my-auto text-center" style="padding: 0%;">
+                    Select Option :
+                </div>
+                <span class="col-lg-8">
+                    <select class="input100" name="utype" onChange = "window.location.href=this.value">
+                        <option selected disabled hidden>Select Category</option>
+                        <!-- <option id = "admin-r-f">Admin</option> -->
+                        <option id = "Patient-r-f" value = "/patients/registration">Patient</option>
+                        <option id = "doctor-r-f" value = "/doctors/registration">Doctor</option>
+                        <option id = "Laboratory-r-f" value = "/labs/registration">Laboratory</option>
+                        <option id = "Medical-r-f" value = "/medicals/registration">Medical</option>
+                    </select>
+                    </span>
+            </div>
+            <div class="col-lg-2">
+                
+            </div>   
+            </div>
+        </div>
+    </div>      
+    <script>
+        window.addEventListener( "pageshow", function ( event ) {
+        var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
+        if ( historyTraversal ) {
+            // Handle page restore.
+            window.location.reload();
+        }});
+    </script>      
+</body>

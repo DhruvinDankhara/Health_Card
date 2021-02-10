@@ -1,0 +1,64 @@
+<body>
+    <div class="limiter">
+        <div class="c_header">
+            <div class="row-header row">
+                <div class="image-1 col-lg-2 text-center my-auto">
+                    <img src="/images/lab.png" style="width: 30%;">
+                </div>
+                <div class="Registration col-lg-10 my-auto">
+                    <span style="font-size: 300%;">
+                        Laboratory dashboard
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+<nav class="navbar  navbar-expand-sm sticky-top" style="padding-left: 5%; padding-right: 5%;">
+    <ul class="navbar-nav">
+        <li class="nav-item my-auto">
+            <a class="textblock nav-link" href="labsdashboard" target="_self">Home</a>
+        </li>
+        <li class="nav-item my-auto">
+            <a class="textblock nav-link" style="background-color: #28a745;"  href="profile" target="_self">My Profile</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="textblock nav-link" href="logout" >Log Out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container2" style="height: auto;">
+    <div class="row">
+        <div class="side_p col-md-2">
+           <div class="text-center my-auto">
+                <img src="/images/lab.png" style="width: 50%;">
+            </div>
+            <div class="text-center">
+                <input type="file" id="selectedFile" style="display: none;">
+                <input type="button" class="btn btn-light" value="Choose Profile Picture" onclick="document.getElementById('selectedFile').click();">
+            </div>
+        </div>
+        <div class="dynamic col-md-10 vl">
+            <div>
+                <p class="text-center" style="font-size: 200%;color: black;">Profile</p>
+            </div>
+            <div style="width: 100%;height: 100%;border: 1px solid black;">
+
+            </div>
+                
+        </div>
+
+    </div>    
+</div>
+<script>
+        window.addEventListener( "pageshow", function ( event ) {
+        var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
+        if ( historyTraversal ) {
+            // Handle page restore.
+            window.location.reload();
+        }});
+</script>
+</body>

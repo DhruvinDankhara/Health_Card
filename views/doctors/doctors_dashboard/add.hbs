@@ -1,0 +1,178 @@
+<body>
+<script src="/js/disease.js"></script>
+<div class="container1">
+    <div class="limiter">
+        <div class="c_header">
+            <div class="row-header row">
+                <div class="image-1 col-lg-2 text-center my-auto">
+                    <img src="/images/doctor.png" style="width: 30%;">
+                </div>
+                <div class="Registration col-lg-10 my-auto">
+                    <span style="font-size: 300%;">
+                        Doctor dashboard
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="row form-group">
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-8">
+            
+        <form class="form-group" method="POST" action="/doctors/add">
+            <h2 class="text-center" style="padding: 5% 0% 3% 0%;">Patient form</h2>
+        <div class="row form-group">
+            <div class="col-lg-3">
+              <label>Healthcard ID</label>
+            </div>
+            <div class="col-lg-7">
+              <input type="text" name="healthid" class="form-control">
+            </div>
+        </div>
+        
+        <div class="row form-group">
+        <div class="col-lg-3">
+            <label>Age</label>
+        </div>
+        <div class="col-lg-7">
+            <input type="number" min="1" name ="age" class="form-control">
+        </div>
+        </div>
+
+       
+        <div>
+            <div class="row form-group">
+                <div class="col-lg-3">
+                    <label>Disease Name</label>
+                </div>
+                <div class="col-lg-7">
+                    <select class="form-control" name="disease" id="disease123" onchange="print_city('medicine1','medicine2','report', this.selectedIndex);" required></select>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-lg-3">
+                    <label>Medicine1</label>
+                </div>
+                <div class="col-lg-4">
+                    {{!-- <input type="button" class="form-control btn btn-success" value="ADD" onclick=" getInputvalue();" style="width:auto;"> --}}
+                       <select class="form-control" name="medicine1" id="medicine1" required><option selected disabled hidden>Select Medicine</option></select>
+                        
+                </div>
+                 <div class="col-lg-3">
+                    {{!-- <input type="button" class="form-control btn btn-success" value="ADD" onclick=" getInputvalue();" style="width:auto;"> --}}
+                       <select class="form-control" name="timedose1" id="state">
+                       <option selected disabled hidden>Time</option>
+                       <option >Before-meal/1-0-0</option>
+                       <option >Before-meal/0-1-0</option>
+                       <option >Before-meal/0-0-1</option>
+                       <option >Before-meal/1-1-0</option>
+                       <option >Before-meal/0-1-1</option>
+                       <option >Before-meal/1-0-1</option>
+                       <option >Before-meal/1-1-1</option>
+                       <option >After-meal/1-0-0</option>
+                       <option >After-meal/0-1-0</option>
+                       <option >After-meal/0-0-1</option>
+                       <option >After-meal/1-1-0</option>
+                       <option >After-meal/0-1-1</option>
+                       <option >After-meal/1-0-1</option>
+                       <option >After-meal/1-1-1</option>
+                       </select>
+                 </div>
+                 <div class="col-lg-2">
+                    <input type="number" name="q1" id="Quantity1" class="form-control" placeholder="Quantity" min="1">
+                </div>
+            </div>
+
+                
+            <div class="row form-group">
+                <div class="col-lg-3">
+                    <label>Medicine2</label>
+                </div>
+                <div class="col-lg-4">
+                    {{!-- <input type="button" class="form-control btn btn-success" value="ADD" onclick=" getInputvalue();" style="width:auto;"> --}}
+                       <select class="form-control" name="medicine2" id="medicine2" required><option selected disabled hidden>Select Medicine</option></select>
+                        
+                </div>
+                 <div class="col-lg-3">
+                    {{!-- <input type="button" class="form-control btn btn-success" value="ADD" onclick=" getInputvalue();" style="width:auto;"> --}}
+                       <select class="form-control" name="timedose2" id="medicine">
+                       <option selected disabled hidden>Time</option>
+                       <option >Before-meal/1-0-0</option>
+                       <option >Before-meal/0-1-0</option>
+                       <option >Before-meal/0-0-1</option>
+                       <option >Before-meal/1-1-0</option>
+                       <option >Before-meal/0-1-1</option>
+                       <option >Before-meal/1-0-1</option>
+                       <option >Before-meal/1-1-1</option>
+                       <option >After-meal/1-0-0</option>
+                       <option >After-meal/0-1-0</option>
+                       <option >After-meal/0-0-1</option>
+                       <option >After-meal/1-1-0</option>
+                       <option >After-meal/0-1-1</option>
+                       <option >After-meal/1-0-1</option>
+                       <option >After-meal/1-1-1</option>
+                       </select>    
+                </div>
+                <div class="col-lg-2">
+                    <input type="number" name="q2" id="Quantity2" class="form-control" placeholder="Quantity" min="1">
+                </div> 
+            </div>
+        
+                <div class="row form-group">
+                <div class="col-lg-3">
+                    <label>Report</label>
+                </div>
+                <div class="col-lg-7">
+                       <select class="form-control" name="reportname" id="report" required><option selected disabled hidden>Select Report</option></select>  
+                </div>
+                </div>
+                {{!-- <script language="javascript">print_state("state");</script> --}}
+            </div>
+            <script language="javascript">print_state("disease123");</script>
+            <div>
+               <!-- <textarea rows="10" cols="50"></textarea>-->
+		{{!-- <table border="1">
+        <tr>
+            <th>Disease</th>
+            <th>Medicine</th>
+            <th>Quantity</th>
+            <th>Morning</th>
+            <th>Afternoon</th>
+            <th>Evening</th>
+            <th>Time</th>
+        </tr>
+    </table> --}}
+            </div>  
+
+            <div class="row form-group">
+                <div class="col-lg-3">
+                    <label>Date</label>
+                </div>
+                <div class="col-lg-4 ">
+                       <input name= "date" type="date" class="form-control date" value="" id="date">
+                </div>
+                </div>  
+    
+            <div class="text-center">
+                <input type="submit" class="form-control btn btn-primary" style="width:auto">
+            </div>
+    </form>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+</div>
+<script> 
+                var today = new Date();
+                  var dd = String(today.getDate()).padStart(2, '0');
+                  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                  var yyyy = today.getFullYear();
+                  today = yyyy + '-' + mm + '-' + dd;
+                  document.getElementById('date').defaultValue = today;
+
+</script>
+</body>
